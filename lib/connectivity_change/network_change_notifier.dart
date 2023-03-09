@@ -11,14 +11,14 @@ class NetworkChangeNotifier extends StateNotifier<NetworkResult> {
 
   Future<void> init() async {
     final Connectivity connectivity = Connectivity();
-    state = await checkInitialConnection(connectivity);
+    await checkInitialConnection(connectivity);
     subscribeToTheConnectionChange(connectivity);
   }
 
-  Future<NetworkResult> checkInitialConnection(
+  Future<void> checkInitialConnection(
       Connectivity connectivity) async {
     var connectivityResult = await connectivity.checkConnectivity();
-    return NetworkResult.checkConnectivity(connectivityResult);
+    state = NetworkResult.checkConnectivity(connectivityResult);
   }
 
   void subscribeToTheConnectionChange(Connectivity connectivity) {
