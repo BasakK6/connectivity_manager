@@ -4,7 +4,7 @@ import 'package:connectivity_manager/project/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:connectivity_manager/connectivity_change/network_change_manager.dart';
+import 'package:connectivity_manager/connectivity_change/network_change_notifier.dart';
 import 'package:connectivity_manager/core/duration_items.dart';
 
 class NoNetworkWidget extends ConsumerWidget {
@@ -17,7 +17,7 @@ class NoNetworkWidget extends ConsumerWidget {
         child: buildErrorMessageContainer(context),
       ),
       secondChild: buildEmptySizedBox(context),
-      crossFadeState: ref.watch(networkChangeManagerProvider).networkResult ==
+      crossFadeState: ref.watch(networkChangeNotifierProvider) ==
               NetworkResult.off
           ? CrossFadeState.showFirst
           : CrossFadeState.showSecond,

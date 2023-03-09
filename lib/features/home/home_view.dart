@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:connectivity_manager/connectivity_change/network_change_manager.dart';
+import 'package:connectivity_manager/connectivity_change/network_change_notifier.dart';
 
 import 'package:connectivity_manager/connectivity_change/network_result.dart';
 
@@ -32,8 +32,7 @@ class _NetworkChangeViewState extends ConsumerState<HomeView> {
 
   Center buildBody() {
     return Center(
-      child: ref.watch(networkChangeManagerProvider).networkResult ==
-              NetworkResult.on
+      child: ref.watch(networkChangeNotifierProvider) == NetworkResult.on
           ? const ColoredMessageBox(
               color: Colors.green,
               message: Constants.homeViewPositiveMessage,
