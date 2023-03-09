@@ -8,19 +8,14 @@ import 'package:connectivity_manager/connectivity_change/network_result.dart';
 import '../../project/constants.dart';
 import 'components/colored_message_box.dart';
 
-class HomeView extends ConsumerStatefulWidget {
+class HomeView extends ConsumerWidget {
   const HomeView({Key? key}) : super(key: key);
 
   @override
-  ConsumerState<HomeView> createState() => _NetworkChangeViewState();
-}
-
-class _NetworkChangeViewState extends ConsumerState<HomeView> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: buildAppBar(),
-      body: buildBody(),
+      body: buildBody(ref),
     );
   }
 
@@ -30,7 +25,7 @@ class _NetworkChangeViewState extends ConsumerState<HomeView> {
     );
   }
 
-  Center buildBody() {
+  Center buildBody(WidgetRef ref) {
     return Center(
       child: ref.watch(networkChangeNotifierProvider) == NetworkResult.on
           ? const ColoredMessageBox(
