@@ -2,8 +2,7 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 
 enum NetworkResult{
   on,
-  off,
-  unknown;
+  off;
 
   static NetworkResult checkConnectivity(ConnectivityResult result){
     switch(result){
