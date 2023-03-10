@@ -11,6 +11,16 @@ You can find the packages that are used in this project below:
 
 The connectivity_plus package was used to make the Internet connection control and the riverpod package was used for state management.
 
+## Finished Product
+
+<img src="https://github.com/BasakK6/connectivity_manager/blob/master/readme_assets/android_screen_recording.gif?raw=true" alt="Android screen recording" width="250"/>
+
+After completing the codes below, we will have an app that changes its UI depending on the Internet connectivity.
+
+UI changes will be done on the following:
+- Specific routes (connectivity changes are listened inside the route)
+- A component that is similar to a SnackBar which becomes visible regardless of the route (connectivity changes are listened in the MaterialApp builder) 
+
 ## 1) Packages Import
 
 First things first, let's import these packages
