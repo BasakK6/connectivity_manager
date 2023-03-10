@@ -1,9 +1,9 @@
 # connectivity_manager
 
-Today, mobile applications work by communicating with various services over the Internet.  For this reason, having an active Internet connection is one of the vital points of a mobile application/web development.  
+Today, applications work by communicating with various services over the Internet.  For this reason, having an active Internet connection is one of the vital points of a mobile application/web development.  
 In this project, we will examine how we can effectively control the Internet connection and update the user interface in Flutter.
 
-In order to obtain this, we can use 2 packages on [pub.dev](https://pub.dev). 
+In order to check the active connection, we can use 2 packages on [pub.dev](https://pub.dev). 
 You can find the packages that are used in this project below:
 
 1) [connectivity_plus](https://pub.dev/packages/connectivity_plus)
